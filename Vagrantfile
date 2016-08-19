@@ -8,11 +8,12 @@ Vagrant.configure("2") do |config|
     a.vm.provider "docker" do |d|
       d.build_dir = "."
       d.build_args = ["-t=demo-env"]
-      d.ports = ["8080:8080"]
       d.force_host_vm = false
       d.name = "demo-env"
+      d.ports = ["8080:8080"]
+      d.volumes = ["/Users/antonioterreno/code/spikes/demo:/app"]
       d.remains_running = true
-      d.cmd = ["./gradlew", "bootRun"]
+      d.cmd = ["./gradlew", "-t", "bootRun"]
     end
   end
 end
