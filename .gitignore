@@ -1,0 +1,5 @@
+.vagrant
+*.iml
+*.ipr
+*.iws
+.idea
